@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Pembelian Mobil</title>
+    <link rel="stylesheet" href="styleForm.css">
+
+    <!--validasi-->
+    <script>
+        function validate() {
+            // Validasi nama maksimal 20 huruf dan hanya huruf
+            var namaInput = document.getElementById("nama").value;
+            if (!/^[A-Za-z]{1,20}$/.test(namaInput)) {
+                document.getElementById("error_nama").innerHTML = "Nama harus terdiri dari maksimal 20 huruf dan hanya huruf.";
+                return false;
+            } else {
+                document.getElementById("error_nama").innerHTML = "";
+            }
+    
+            // Validasi nomor telepon harus 13 angka
+            var teleponInput = document.getElementById("telepon").value;
+            if (!/^[0-9]{13}$/.test(teleponInput)) {
+                document.getElementById("error_telepon").innerHTML = "Nomor telepon harus terdiri dari 13 angka.";
+                return false;
+            } else {
+                document.getElementById("error_telepon").innerHTML = "";
+            }
+    
+            // Validasi apakah setidaknya satu pilihan tambahan telah dipilih
+            var opsiInputs = document.querySelectorAll('input[name="opsi"]:checked');
+            if (opsiInputs.length === 0) {
+                document.getElementById("error_tambahan").innerHTML = "Minimal memilih 1 tambahan.";
+                return false;
+            }
+    
+            return true;
+        }
+    </script>
+    
+</head>
+<body>
+    <div class="container">
+        <h1>Formulir Pembelian Mobil</h1>
+        <form onsubmit="return validate()">
+            <label for="nama">Nama Lengkap:</label>
+            <input type="text" id="nama" name="nama" required>
+            <div id="error_nama" style="color: red;"></div>
+            
+            <label for="telepon">Nomor Telepon:</label>
+            <input type="text" id="telepon" name="telepon" pattern="[0-9]+" required>
+            <div id="error_telepon" style="color: red;"></div>
+
+            <label for="alamat">Alamat:</label>
+            <textarea id="alamat" name="alamat" rows="4" required></textarea>
+            
+            <div class="radio-container">
+                <label>Jenis Kelamin:</label><br>
+                <label for="laki-laki">Laki-laki
+                <input type="radio" id="radio" name="jenis_kelamin" value="Laki-laki" required></label>
+                <label for="perempuan">Perempuan
+                <input type="radio" id="radio" name="jenis_kelamin" value="Perempuan" required></label>
+            </div>
+            
+            
+            <label for="pilihan_mobil">Pilih Warna:</label>
+            <select id="pilihan_mobil" name="mobil" required>
+                <option value="Hitam">Hitam</option>
+                <option value="Putih">Putih</option>
+                <option value="Abu-abu">Abu-abu</option>
+            </select>
+            
+            
+            <label>Pilihan Tambahan:</label>
+            <label for="asuransi">Asuransi
+            <input type="checkbox" id="asuransi" name="opsi" value="Asuransi"></label>
+            <label for="pembiayaan">Pembiayaan
+            <input type="checkbox" id="pembiayaan" name="opsi" value="Pembiayaan"></label>
+            <label for="paket_servis">Paket Servis
+            <input type="checkbox" id="paket_servis" name="opsi" value="Paket Servis"></label>
+            <div id="error_tambahan" style="color: red;"></div>
+            
+            <div class="button-container">
+                <button type="submit">Beli</button>
+                <button type="reset">Reset</button>
+            </div>
+        </form>
+    </div>
+    </body>
+
+</html>

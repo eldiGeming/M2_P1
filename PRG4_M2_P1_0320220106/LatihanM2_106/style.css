@@ -1,0 +1,103 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+h1 {
+    margin: 0;
+}
+
+.car-list {
+    display: flex;
+    overflow-x: scroll;
+    padding: 20px;
+    justify-content: center;
+    margin: auto;
+}
+
+.car-item {
+    flex: 0 0 300px;
+    margin-right: 20px;
+    border: 1px solid #333;
+    padding: 10px;
+}
+
+.car-item img {
+    max-width: 100%;
+    height: auto;
+}
+
+footer {
+    background-color: #333;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+mobil{
+    size: 100px;
+}
+
+/* CSS untuk tabel */
+.table {
+    border-collapse: collapse; /* Menggabungkan border agar tidak ada celah */
+    width: 100%; /* Lebar tabel 100% dari wadahnya */
+  }
+  
+  /* CSS untuk sel header */
+  .table th {
+    border: 2px solid #000; /* Tipe border solid dengan ketebalan 2px dan warna hitam */
+    padding: 8px; /* Ruang di dalam sel */
+    text-align: center; /* Teks rata tengah */
+  }
+  
+  /* CSS untuk sel data */
+  .table td {
+    border: 1px solid #000; /* Tipe border solid dengan ketebalan 1px dan warna hitam */
+    padding: 8px; /* Ruang di dalam sel */
+    text-align: center; /* Teks rata tengah */
+  }
+  
+  .table-caption {
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  tr {
+    text-align: center; /* Mengatur teks di tengah secara horizontal */
+    vertical-align: middle; /* Mengatur teks di tengah secara vertikal */
+  }
+
+.car-item button{
+    background-color: rgb(91, 97, 97);
+}
+
+.car-item a{
+    text-decoration: none; /* Menghilangkan garis bawah */
+    color: black; /* Mengatur warna teks menjadi hitam */
+}
+
+.menu{
+    background-color: #333;
+    color: white;
+    
+}
+
+.menu h1 {
+    font-size: 36px; /* Contoh pengaturan ukuran font untuk teks */
+}
+
+.menu .btn{
+    justify-content: center;
+}
+
